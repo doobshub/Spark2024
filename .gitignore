@@ -347,3 +347,4 @@ $RECYCLE.BIN/
 
 src/model/Mask_RCNN
 src/model/PKLot
+**/__pycache__/
