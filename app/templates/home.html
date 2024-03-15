@@ -1,0 +1,5 @@
+{% extends 'base.html' %} {% block header %}
+<h2>{% block title %}Parking Spots Remaining{% endblock title %}</h2>
+<div>{% block info %}{{ numOfSpots }}{% endblock info %}</div>
+<img src="{{ imagePath }}" alt="Parking Image" />
+{% endblock header %}

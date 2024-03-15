@@ -175,17 +175,3 @@ class ParkingSpaceDetector:
                 )
                 empty_count += 1
         return empty_count
-
-
-# Example usage
-detector = ParkingSpaceDetector("presentationRegion.p")
-image_path = "presentationImage.png"
-processed_image, empty_count = detector.process_image_and_highlight(image_path)
-
-if processed_image is not None:
-    cv2.imshow("Empty Spaces Highlighted", processed_image)
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
-    print(f"Number of empty spaces: {empty_count}")
-else:
-    print("Failed to process the image.")
