@@ -1,0 +1,15 @@
+{
+    "version": "2.0.0",
+    "tasks": 
+    [
+        {
+            "label": "Build App",
+            "type": "shell",
+            "command": "source ./scripts/build-app.sh",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [],
+        }
+    ]
+}

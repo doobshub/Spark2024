@@ -5,7 +5,6 @@ from torchvision.models.detection import (
     ssdlite320_mobilenet_v3_large,
     SSDLite320_MobileNet_V3_Large_Weights,
 )
-import numpy as np
 import pickle
 from PIL import Image
 
@@ -58,7 +57,7 @@ class ParkingSpaceDetector:
         model.eval()
         return model
 
-    def process_image_and_highlight(self, image_path, threshold=0.032):
+    def process_image_and_highlight(self, image_path, output_path, threshold=0.032):
         """
         Processes an image to detect and highlight empty parking spaces.
 
@@ -79,6 +78,7 @@ class ParkingSpaceDetector:
         overlaps = self.check_region_overlap(car_boxes, threshold)
         empty_count = self.highlight_empty_spaces(image, overlaps)
 
+        cv2.imwrite(output_path, image)
         return image, empty_count
 
     @staticmethod

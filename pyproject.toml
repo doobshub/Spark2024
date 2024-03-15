@@ -1,0 +1,36 @@
+[tool.black]
+line-length = 88
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.venv
+  | build
+)/
+'''
+
+[tool.pytest.ini_options]
+addopts = "--cov=app --cov-report=term-missing --cov-report=html:build/tools/pytest/htmlcov --cov-report=xml:build/tools/pytest/coverage.xml --verbose"
+testpaths = ["app"]
+
+
+[tool.coverage.run]
+branch = true
+source = ["app", "test"]
+omit = ["app/__main__.py"]
+data_file = "build/tools/pytest/.coverage"
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "if self.debug:",
+    "raise AssertionError",
+    "if 0:",
+    "if __name__ == .__main__.:",
+]
+
+[tool.pylint]
+disable = []
+max-line-length = 88
+ignore-paths = [".venv/*"]
