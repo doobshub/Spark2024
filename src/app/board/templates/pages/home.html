@@ -1,10 +1,4 @@
-{% extends 'base.html' %}
-
-{% block header %}
-    <h2>{% block title %}
-        Parking Spots Remaining 
-    {% endblock title %}</h2>
-    <div>{% block info %}
-       {{numOfSpots}}
-    {% endblock info %}</div>
+{% extends 'base.html' %} {% block header %}
+<h2>{% block title %} Parking Spots Remaining {% endblock title %}</h2>
+<div>{% block info %} {{numOfSpots}} {% endblock info %}</div>
 {% endblock header %}
